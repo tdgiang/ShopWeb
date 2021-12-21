@@ -1,0 +1,61 @@
+@import "assets/scss/common";
+
+.admin-header {
+    @include flex-row(flex-start);
+    @include shadow2;
+    font-size: 1.6rem;
+    color: $black2;
+    padding: 2rem 0;
+    position: relative;
+
+    &__left {
+        width: 25rem;
+        padding: 0 2rem;
+
+        .logo {
+            color: $green1;
+            font-size: 3rem;
+
+            span {
+                font-weight: 600;
+            }
+
+            small {
+                font-size: 1.8rem;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    &__right {
+        @include flex-row(flex-end);
+        flex-grow: 1;
+        padding: 0 2rem;
+
+        .language {
+            cursor: pointer;
+        }
+
+        .user {
+            @include flex-row;
+            margin-left: 3rem;
+            cursor: pointer;
+
+            &-avatar {
+                margin-left: 0.5rem;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.language-list {
+    cursor: pointer;
+
+    &:hover {
+        color: $green1;
+    }
+}

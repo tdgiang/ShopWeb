@@ -1,0 +1,27 @@
+@import "assets/scss/common";
+
+.orders-content {
+    @include flex-column(space-between, stretch);
+    margin-top: 2rem;
+    flex-grow: 1;
+
+    &__table {
+        flex-grow: 1;
+        .ant-table-thead > tr > th {
+            background-color: $green1;
+            color: $white1;
+        }
+    }
+
+    &__pagination {
+        @include flex-row;
+    }
+}
+
+.status-change {
+    span:first-child {
+        font-size: 1.8rem;
+        color: $black2;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,235 @@
+@import "assets/scss/common";
+
+.admin-section {
+    @include flex-column(flex-start, stretch);
+    height: 100%;
+    
+    &__header {
+        @include flex-row(flex-start);
+        margin-bottom: 2rem;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: $black2;
+        }
+
+        i {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-right: 2rem;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                color: $green1;
+            }
+        }
+    }
+
+    &__content {
+        @include flex-column(flex-start, stretch);
+        @include shadow2;
+        background-color: $white1;
+        padding: 2rem;
+        flex-grow: 1;
+
+        .content-filter {
+            @include flex-row(space-between);
+
+            .search-filter {
+                @include flex-row(center, stretch);
+
+                a {
+                    @include flex-row;
+                    background-color: $green1;
+                    color: $white1;
+                    font-size: 3rem;
+                    padding: 0 1rem;
+                    border-radius: 0.3rem;
+                    margin-left: 1rem;
+
+                    span {
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            .categories-filter {
+                @include flex-row;
+                & > span {
+                    font-size: 1.6rem;
+                    color: $black2;
+                }
+                .select-form {
+                    margin-left: 0.5rem;
+                    border: 2px solid $black2;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+        .content-table {
+            @include flex-column(flex-start, stretch);
+            margin-top: 2rem;
+            flex-grow: 1;
+
+            table {
+                width: 100%;
+                flex-grow: 1;
+                border-collapse: collapse;
+                table-layout: fixed;
+                background-color: $white1;
+
+                thead {
+                    background-color: $green1;
+                    color: $white1;
+                    th {
+                        font-weight: bold;
+                        font-size: 1.6rem;
+
+                        &:nth-child(1) {
+                            width: 15%;
+                        }
+                        &:nth-child(2) {
+                            width: 20%;
+                        }
+                        &:nth-child(3) {
+                            width: 30%;
+                        }
+                    }
+                }
+
+                tbody {
+                    position: relative;
+                    min-height: 0;
+
+                    td {
+                        font-size: 1.6rem;
+                        color: $black2;
+
+                        &.col-name a {
+                            color: $green1;
+                            font-weight: bold;
+
+                            &:hover {
+                                color: $orange1;
+                            }
+                        }
+
+                        &.col-image img {
+                            width: 15rem;
+                            height: 15rem;object-fit: contain;
+                        }
+
+                        &.col-description {
+                            line-height: 1.5;
+                            text-align: left;
+                        }
+
+                        &.col-action {
+                            i {
+                                font-size: 2.5rem;
+                                cursor: pointer;
+
+                                &.bxs-edit-alt {
+                                    color: $blue1;
+                                    margin-right: 0.5rem;
+                                }
+
+                                &.bx-trash {
+                                    color: $red2;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                th,
+                td {
+                    border: 1px solid $white4;
+                    padding: 2rem 1rem;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-size: 1.4rem;
+                }
+            }
+
+            .table-pagination {
+                @include flex-row;
+                margin-top: 2rem;
+                padding: 2rem 0
+            }
+        }
+
+        .product-manage {
+            @include flex-row(flex-start, stretch);
+
+            & > div {
+                background-color: $white1;
+                padding: 2rem;
+            }
+
+            .manage-title {
+                font-size: 2rem;
+                font-weight: bold;
+                color: $black2;
+                margin-bottom: 2rem;
+                white-space: nowrap;
+            }
+
+            &__left {
+                width: 70%;
+
+                .submit-wrapper {
+                    @include flex-row;
+
+                    .submit-button {
+                        width: 25rem;
+
+                        button {
+                            height: auto;
+                            font-weight: bold;
+                            padding: 1.5rem 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &__right {
+                width: 30%;
+
+                .image-preview {
+                    @include flex-row;
+                    border: 3px solid $black2;
+                    height: 35rem;
+                    border-radius: 2rem;
+                    overflow: hidden;
+                    margin-top: 4.5rem;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                #input-upload {
+                    display: none;
+                }
+
+                .image-upload {
+                    @include flex-row;
+                    margin-top: 2rem;
+
+                    label {
+                        padding: 1rem 1.5rem;
+                        border: none;
+                        font-size: 1.6rem;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

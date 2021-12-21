@@ -1,0 +1,158 @@
+@import "assets/scss/common";
+
+.cart-empty {
+    .empty-alert {
+        @include flex-row;
+        height: 50vh;
+
+        h2 {
+            font-size: 3rem;
+            color: $black2;
+        }
+    }
+}
+
+.cart-main {
+    margin-top: 7rem;
+
+    &__title {
+        font-size: 5rem;
+        color: $black2;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    .cart-table {
+        overflow-x: auto;
+
+        table {
+            width: 100%;
+            min-width: 70rem;
+            border-collapse: collapse;
+            border-radius: 1rem;
+
+            th {
+                font-size: 2.5rem !important;
+                font-weight: bold;
+                color: $black2;
+                padding: 2rem 0;
+
+                &:first-child {
+                    text-align: left;
+                    padding-left: 8rem;
+                }
+            }
+
+            tr + tr {
+                border-top: 3px solid $green1;
+                text-align: left;
+            }
+
+            th,
+            td {
+                height: 2rem;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 2rem;
+                color: $black2;
+            }
+
+            .product-info {
+                width: 50rem;
+                & > div {
+                    @include flex-row(flex-start);
+                    padding: 0.5rem 1rem;
+                }
+                img {
+                    width: 15rem;
+                }
+
+                .info-title {
+                    margin-left: 1rem;
+                    color: $black2;
+                }
+            }
+
+            .product-quantity > div {
+                @include flex-row;
+            }
+
+            .product-delete i {
+                font-size: 3rem;
+                color: $green1;
+                cursor: pointer;
+                transition: 0.3s;
+                
+                &:hover {
+                    color: $orange1;
+                }
+            }
+        }
+    }
+
+    .continue-shopping {
+        @include flex-row(flex-end);
+        margin-top: 3rem;
+    }
+
+    .btn-link {
+        color: $white1;
+        padding: 2rem 4rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        border: 2px solid transparent;
+    }
+
+    .btn-cancel {
+        background-color: $white1;
+        color: $green1;
+        margin-right: 2rem;
+        border: 2px solid $green1;
+
+        &:hover {
+            background-color: $orange1;
+            border: 2px solid transparent;
+            color: $white1 !important;
+        }
+    }
+
+    .bill-wrapper {
+        @include flex-column(center, flex-end);
+        margin-top: 7rem;
+
+        .bill {
+            background-color: $white3;
+            width: 50rem;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            margin-bottom: 3rem;
+
+            hr {
+                height: 3px;
+                background-color: $green1;
+                border: none;
+                margin: 2rem 0;
+            }
+
+            &-content {
+                @include flex-row(space-between);
+                span {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    color: $black2;
+
+                    &:last-child {
+                        color: $green1;
+                    }
+                }
+                & + .bill-content {
+                    margin-top: 1rem;
+                }
+
+                &.total-payment span {
+                    font-size: 2.3rem;
+                }
+            }
+        }
+    }
+}

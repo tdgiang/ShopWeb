@@ -1,0 +1,527 @@
+@import "assets/scss/common";
+
+$bottomSpace: 15rem;
+
+.home-page {
+  margin-top: 10rem;
+
+  @include md {
+    margin-top: 1rem;
+  }
+
+  .carousel-show {
+    margin-bottom: $bottomSpace;
+
+    @include md {
+      margin-bottom: 5rem;
+    }
+
+    .carousel-block {
+      @include flex-row;
+      display: flex !important;
+      height: 50rem;
+
+      @include md {
+        height: 40rem;
+      }
+
+      & > div {
+        width: 50%;
+      }
+
+      &__left {
+        .left-title {
+          font-size: 4rem;
+          font-weight: bold;
+          color: $green1;
+          margin-bottom: 2rem;
+
+          @include md {
+            font-size: 3rem;
+          }
+
+          @include sm {
+            font-size: 2rem;
+          }
+        }
+
+        .left-description {
+          font-size: 2.5rem;
+          color: $black2;
+          line-height: 1.3;
+          margin-bottom: 5rem;
+
+          @include md {
+            font-size: 1.6rem;
+          }
+        }
+
+        .left-btn {
+          width: 20rem;
+          padding: 2rem 0;
+          font-weight: bold;
+          color: $white1;
+
+          @include md {
+            font-size: 1.6rem;
+            width: 15rem;
+          }
+        }
+      }
+
+      &__right {
+        @include flex-row;
+        height: 100%;
+
+        img {
+          height: 90%;
+
+          @include md {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .banner {
+    position: relative;
+    padding: 15rem 0;
+    margin-bottom: $bottomSpace;
+
+    @include md {
+      margin-bottom: 5rem;
+    }
+
+    .banner-hidden-text {
+      @include flex-row;
+      font-weight: 500;
+      opacity: 0.2;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      font-size: 30rem;
+      left: 0;
+      right: 0;
+    }
+
+    .banner-body {
+      position: relative;
+      z-index: 2;
+
+      &__title {
+        @include flex-column;
+        margin-bottom: 10rem;
+
+        @include md {
+          margin-bottom: 5rem;
+        }
+
+        p {
+          font-size: 5rem;
+          font-weight: bold;
+          color: $white1;
+          text-align: center;
+
+          @include md {
+            font-size: 3.5rem;
+          }
+        }
+
+        span {
+          font-size: 2.5rem;
+          margin-top: 1rem;
+          color: $white1;
+
+          @include md {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    & > img {
+      position: absolute;
+      z-index: 3;
+
+      @include md {
+        width: 12rem;
+      }
+
+      &.decor-2 {
+        top: -6rem;
+        right: 5rem;
+
+        @include md {
+          top: 6rem;
+        }
+
+        @include sm {
+          top: 0;
+          right: 3rem;
+        }
+      }
+
+      &.decor-1 {
+        bottom: -6rem;
+        left: 5rem;
+
+        @include md {
+          bottom: 6rem;
+          left: 2rem;
+        }
+
+        @include sm {
+          bottom: 3rem;
+          right: 2rem;
+        }
+      }
+
+      &.decor-3 {
+        top: 10rem;
+        left: 25rem;
+
+        @include md {
+          left: 10rem;
+        }
+
+        @include sm {
+          left: 1rem;
+          top: 5rem;
+        }
+      }
+
+      &.decor-4 {
+        bottom: -6rem;
+        right: 15rem;
+
+        @include sm {
+          bottom: 6rem;
+          right: 5rem;
+        }
+      }
+    }
+
+    &--cuver {
+      &::before {
+        content: "";
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 55px;
+        background-repeat: repeat-x;
+        transform: rotate(180deg);
+      }
+
+      &::after {
+        content: "";
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        height: 55px;
+        background-repeat: repeat-x;
+      }
+    }
+  }
+
+  .banner-1 {
+    background-color: $orange1;
+    color: $white1;
+
+    .banner-body {
+      &__title {
+        @include flex-column;
+        margin-bottom: 10rem;
+
+        @include sm {
+          margin-bottom: 5rem;
+        }
+
+        p {
+          font-size: 5rem;
+          font-weight: bold;
+          color: $white1;
+        }
+        span {
+          font-size: 2.5rem;
+          margin-top: 1rem;
+          color: $white1;
+        }
+      }
+
+      &__card {
+        .card-list {
+          @include flex-row;
+
+          @include sm {
+            @include flex-column;
+          }
+
+          .card-item {
+            flex-grow: 1;
+            padding: 0 1.5rem;
+
+            @include sm {
+              margin-bottom: 5rem;
+            }
+
+            .card-img {
+              @include flex-row;
+            }
+
+            .card-title {
+              font-size: 2.5rem;
+              font-weight: bold;
+              margin: 2rem 0;
+            }
+
+            p {
+              font-size: 1.6rem;
+              text-align: center;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-2 {
+    padding: 0;
+
+    .banner-hidden-text {
+      color: $orange1;
+      opacity: 0.1;
+    }
+
+    .banner-body {
+      @include flex-row;
+
+      @include md {
+        @include flex-column(center);
+      }
+
+      & > div {
+        width: 50%;
+        padding: 0 2rem;
+
+        @include md {
+          width: 100%;
+        }
+      }
+
+      &__right {
+        .title {
+          font-size: 4.8rem;
+          color: $orange1;
+          font-weight: bold;
+          margin-bottom: 2rem;
+        }
+
+        .description {
+          font-size: 5.6rem;
+          color: $black2;
+          font-weight: bold;
+          margin-bottom: 3rem;
+
+          @include md {
+            font-size: 3.5rem;
+          }
+        }
+
+        .fresh-list {
+          margin-bottom: 5rem;
+
+          .fresh-item {
+            @include flex-row(flex-start);
+
+            i {
+              font-size: 3rem;
+              color: $orange1;
+              margin-right: 2rem;
+            }
+
+            span {
+              font-size: 1.8rem;
+              line-height: 1.3;
+              color: $black2;
+              font-weight: 500;
+            }
+
+            & + .fresh-item {
+              margin-top: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-3 {
+    background-color: $green5;
+
+    .banner-hidden-text {
+      opacity: 0.1;
+    }
+
+    .decor-2 {
+      right: 15rem !important;
+    }
+
+    .cate-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 5rem;
+
+      @include md {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+      }
+
+      .cate-item {
+        background-color: $white1;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 1.5rem;
+        overflow: hidden;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &__bottom {
+          @include flex-row;
+          font-size: 3rem;
+          font-weight: bold;
+          color: $black2;
+          padding-bottom: 5rem;
+
+          @include md {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .banner-4 {
+    padding: 0;
+    padding-bottom: 10rem;
+
+    @include md {
+      padding-bottom: 0;
+    }
+
+    .banner-body {
+      p,
+      span {
+        color: $black2;
+      }
+
+      .shipping-list {
+        @include flex-row;
+
+        @include md {
+          flex-direction: column;
+        }
+
+        .shipping-item {
+          margin: 0 5rem;
+          border: 2px solid $white5;
+          border-radius: 1.5rem;
+          cursor: pointer;
+          padding: 2rem 0;
+          transition: 0.3s;
+
+          @include md {
+            margin-bottom: 2rem;
+          }
+
+          &:hover {
+            background-color: $orange1;
+
+            p {
+              color: $white1 !important;
+            }
+          }
+
+          .item-top {
+            background-color: $white1;
+            width: fit-content;
+            padding: 1rem 2rem;
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            margin-bottom: 2rem;
+          }
+
+          .item-bottom {
+            padding: 0 2rem;
+
+            .title {
+              font-size: 2.5rem;
+              font-weight: bold;
+              margin-bottom: 2rem;
+            }
+
+            .description {
+              font-size: 1.4rem;
+              line-height: 1.3;
+              color: $black2;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-5 {
+    .card-list {
+      .card-item {
+        @include flex-row;
+
+        .card-right {
+          @include flex-column;
+          margin-left: 1rem;
+
+          .card-number {
+            font-size: 5rem;
+            font-weight: bold;
+          }
+
+          .card-title {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-carousel .slick-dots {
+  margin: 0 !important;
+}
+
+.carousel-show .ant-carousel .slick-dots li {
+  margin: 0 2rem;
+
+  button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: $green1;
+    opacity: 0.1;
+
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &.slick-active button {
+    opacity: 1;
+    background-color: $green1;
+  }
+}

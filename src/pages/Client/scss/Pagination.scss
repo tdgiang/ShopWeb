@@ -1,0 +1,36 @@
+@import "assets/scss/common";
+
+.products-pagination {
+    @include flex-row;
+    margin-top: 5rem;
+
+    a {
+        display: block;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $black2;
+        transition: 0.3s;
+
+        &:hover {
+            color: $green1;
+        }
+    }
+
+    .first-page-btn,
+    .last-page-btn {
+        font-size: 3rem;
+    }
+
+    .pagination-list {
+        @include flex-row;
+
+        li {
+            margin: 0 1rem;
+
+            &.active a {
+                color: $green1;
+                transform: scale(1.5);
+            }
+        }
+    }
+}

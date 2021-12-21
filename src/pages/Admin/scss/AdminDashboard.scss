@@ -1,0 +1,26 @@
+@import "assets/scss/common";
+
+.dashboard-chart {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5rem;
+    height: 100%;
+
+    .chart-block {
+        max-width: 100%;
+        
+        .chart-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: $black2;
+            margin-bottom: 3rem;
+        }
+
+        &.line-chart {
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+        }
+    }
+}

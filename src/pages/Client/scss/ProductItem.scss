@@ -1,0 +1,82 @@
+@import "assets/scss/common";
+
+.product-item {
+    @include flex-column(flex-start, flex-start);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: 0.3s;
+    height: 100%;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    }
+
+    &__top {
+        @include flex-row;
+        width: 100%;
+        
+        img {
+            max-width: 14.5rem;
+            height: 14.5rem;
+        }
+    }
+
+    &__bottom {
+        @include flex-column(flex-start, flex-start);
+        padding: 2rem;
+        flex-grow: 1;
+        width: 100%;
+
+        @include lg {
+            padding: 1rem;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: 500;
+            color: $black2;
+            transition: 0.3s;
+            margin-bottom: 0.5rem;
+
+            &:hover {
+                color: $green1;
+            }
+        }
+
+        .product-description {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            overflow: hidden;
+            color: $black2;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+            flex-grow: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-foot {
+            @include flex-row(space-between);
+            width: 100%;
+            margin-top: 2rem;
+
+            .product-price {
+                font-size: 1.8rem;
+                color: $black2;
+                font-weight: 500;
+
+                span:last-child {
+                    margin-left: 0.5rem;
+                }
+            }
+
+            .btn {
+                border-radius: 50%;
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,260 @@
+@import "assets/scss/common";
+
+.products-container {
+    @include flex-row(flex-start, flex-start);
+    padding: 7rem 0;
+
+    @include md {
+        flex-direction: column;
+    }
+
+    .products-sidebar {
+        width: 27rem;
+        flex-shrink: 0;
+
+        @include md {
+            width: 100%;
+        }
+
+        .hot-block {
+            @include md {
+                display: none;
+            }
+        }
+
+        .sidebar-block {
+            margin-bottom: 3rem;
+
+            .block-title {
+                font-size: 2.4rem;
+                color: $black2;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+            }
+
+            .search-form {
+                @include flex-row(flex-start);
+
+                .search-btn {
+                    margin-left: 1rem;
+                }
+            }
+
+            .categories-list {
+                .categories-item {
+                    @include flex-row(flex-start);
+
+                    .categories-link {
+                        display: block;
+                        color: $black2;
+                        transition: 0.3s;
+                        font-weight: 500;
+                        width: 100%;
+                        cursor: pointer;
+
+                        span {
+                            margin-left: 1rem;
+                            font-size: 1.8rem;
+                            line-height: 2;
+                        }
+
+                        &.active {
+                            color: $green1;
+                            transform: translateX(1rem);
+                        }
+
+                        &:hover {
+                            color: $green1;
+                        }
+                    }
+                }
+            }
+
+            .rating-list {
+                .rating-item {
+                    margin-bottom: 0.5rem;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &.active {
+                        transform: translateX(1rem);
+                    }
+                }
+            }
+
+            .price-range-list {
+                li {
+                    margin-bottom: 0.5rem;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    color: $black2;
+
+                    &:hover {
+                        color: $green1;
+                    }
+
+                    &.active {
+                        transform: translateX(1rem);
+                        color: $green1;
+                    }
+
+                    .sign {
+                        margin: 0 1rem;
+                        font-size: 2rem;
+                    }
+
+                    .money-unit {
+                        margin-left: 0.5rem;
+                    }
+                    span {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .price-range-form {
+                .range-input {
+                    @include flex-row(space-between);
+                    width: 14rem;
+
+                    &:last-of-type {
+                        margin-top: 1rem;
+                    }
+                }
+                label {
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: $black2;
+                }
+
+                input {
+                    width: 10rem;
+                }
+
+                /* Chrome, Safari, Edge, Opera */
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                /* Firefox */
+                input[type="number"] {
+                    -moz-appearance: textfield;
+                }
+
+                button {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+
+    .products-show {
+        flex-grow: 1;
+        margin-left: 2rem;
+
+        @include md {
+            margin-left: 0;
+        }
+
+        &__header {
+            @include flex-row(space-between);
+            margin-bottom: 1rem;
+
+            .header-left {
+                @include flex-row;
+                
+                button {
+                    margin-right: 1rem;
+                }
+
+                span {
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    color: $black2;
+                }
+            }
+
+            .reset-btn {
+                font-size: 1.4rem;
+                font-weight: 500
+            }
+
+            .header-right {
+                @include flex-row;
+                position: relative;
+
+                .sort-text {
+                    margin-right: 0.5rem;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    color: $black2;
+                }
+
+                #sort-by {
+                    padding: 0.5rem 1rem;
+                    padding-right: 3rem;
+                    border-radius: 1.5rem;
+                    outline: none;
+                    -moz-appearance: none; /* Firefox */
+                    -webkit-appearance: none; /* Safari and Chrome */
+                    appearance: none;
+                    cursor: pointer;
+                    font-size: 1.4rem;
+                }
+
+                i {
+                    @include absoluteCenter(y);
+                    right: 1rem;
+                }
+            }
+        }
+
+        &__body {
+            min-height: 70vh;
+            position: relative;
+
+            .products-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-gap: 1.5rem;
+
+                @include lg {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                @include sm {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
+
+        &__footer {
+            @include flex-row;
+            margin-top: 5rem;
+
+            .custom-pagination {
+                &.ant-pagination .ant-pagination-item-link, a,
+                li {
+                    border: none;
+                    font-size: 2rem;
+                    transition: 0.3s;
+                    color: $black2;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: $green1;
+                    }
+                }
+
+                & .ant-pagination-item-active a {
+                    color: $green1;
+
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}

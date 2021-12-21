@@ -1,0 +1,82 @@
+@import "assets/scss/common";
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $green1;
+    margin-bottom: 1.5rem;
+}
+
+.user-profile-form {
+    .form-input {
+        @include flex-row(center, flex-start);
+        margin: 0 -1rem;
+
+        & > div {
+            width: 50%;
+            padding: 0 1rem;
+        }
+
+        &__left {
+            input {
+                padding: 0.5rem 1rem !important;
+            }
+            .select-wrapper {
+                height: 4rem;
+            }
+        }
+
+        &__right {
+            .manage-title {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: $black2;
+                margin-bottom: 1rem;
+            }
+
+            .image-preview {
+                @include flex-row;
+                margin-bottom: 2rem;
+
+                img {
+                    width: 20rem;
+                    height: 20rem;
+                    border: 1px solid $black2;
+                }
+            }
+
+            input {
+                display: none;
+            }
+
+            .image-upload {
+                width: 50%;
+                margin: 0 auto;
+
+                label {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    .form-button {
+        margin: 0 auto;
+        display: block;
+        border: none;
+        background-color: $green1;
+        padding: 1rem 3rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: $white1;
+        font-weight: bold;
+        transition: .3s;
+        cursor: pointer;
+        height: 4.5rem;
+        width: 20rem;
+
+        &:hover {
+            background-color: $orange1;
+        }
+    }
+}

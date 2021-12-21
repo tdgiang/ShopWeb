@@ -1,0 +1,403 @@
+@import "assets/scss/common";
+
+%fontStyle {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.header-container {
+  background-color: $green1;
+  align-items: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    bottom: 0;
+    height: 3rem;
+
+    @include lg {
+      bottom: -1.5rem;
+    }
+  }
+
+  .header {
+    @include flex-row(flex-start);
+    flex-wrap: wrap;
+
+    &__middle {
+      @include flex-row;
+      flex-grow: 1;
+      margin-left: 3rem;
+
+      @include lg {
+        display: none;
+        order: 3;
+        margin-left: 0;
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+
+      &.header-nav--active {
+        display: flex;
+      }
+    }
+
+    .header-nav {
+      flex-grow: 1;
+      width: 100%;
+      @include lg {
+        order: 2;
+      }
+
+      .nav-list {
+        @include flex-row(flex-start);
+        @include lg {
+          flex-direction: column;
+        }
+
+        .nav-item {
+          @include lg {
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid $white1;
+            margin-left: 0 !important;
+            &:first-child {
+              border-top: none;
+            }
+          }
+          a {
+            @extend %fontStyle;
+            display: block;
+            color: $white1;
+            padding: 1rem 2rem;
+            transition: 0.3s;
+            border-radius: 15rem;
+            @include lg {
+              flex-direction: column;
+              border-radius: 0;
+              width: 100%;
+            }
+            @include sm {
+              font-size: 1.2rem;
+            }
+
+            &:hover {
+              background-color: $white1;
+              color: $green1;
+            }
+          }
+
+          & + .nav-item {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+
+    .user {
+      @include flex-row;
+      cursor: pointer;
+
+      &-profile {
+        margin-right: 0.5rem;
+
+        .user-name {
+          color: $white1;
+          font-weight: 500;
+          font-size: 1.6rem;
+        }
+      }
+
+      &-avatar {
+        img {
+          border-radius: 50%;
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+    }
+
+    .header-option {
+      @include flex-row;
+      flex-shrink: 0;
+      @include lg {
+        order: 1;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .option-language {
+        position: relative;
+        padding: 1rem 2rem;
+        cursor: pointer;
+
+        .option-title {
+          @include flex-row;
+          span {
+            font-size: 1.6rem;
+            color: $white1;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            @include sm {
+              font-size: 1.2rem;
+            }
+          }
+          i {
+            font-size: 2rem;
+            color: $white1;
+          }
+        }
+
+        &:hover .language-list {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .language-list {
+          @include flex-column;
+          position: absolute;
+          transform: translateY(10%);
+          opacity: 0;
+          visibility: hidden;
+          top: 100%;
+          left: 0;
+          background-color: $white1;
+          width: 100%;
+          padding: 1rem 0;
+          border-radius: 0.5rem;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          transition: 0.3s;
+          z-index: 2;
+
+          .language-item {
+            font-size: 1.4rem;
+            transition: 0.3s;
+
+            &:hover {
+              color: $green1;
+            }
+
+            &:last-child {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+
+      .option-auth {
+        @include flex-row;
+
+        .option-title {
+          &:last-child {
+            margin-left: 1.5rem;
+          }
+          a {
+            @include flex-row;
+            span {
+              @extend %fontStyle;
+              color: $white1;
+              @include sm {
+                font-size: 1.2rem;
+              }
+            }
+            i {
+              font-size: 2rem;
+              color: $white1;
+              margin-right: 0.3rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__right {
+      @include flex-row(flex-end);
+      @include lg {
+        flex-grow: 1;
+        order: 2;
+      }
+      .header-cart {
+        margin-left: 1rem;
+        .cart-link {
+          position: relative;
+          cursor: pointer;
+
+          i {
+            font-size: 3rem;
+            color: $white1;
+          }
+          span {
+            @include flex-row;
+            position: absolute;
+            font-size: 1.6rem;
+            background-color: $orange1;
+            color: $white1;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            top: -1rem;
+            right: -1rem;
+          }
+        }
+      }
+      .header-menu {
+        cursor: pointer;
+        display: none;
+        margin-left: 2rem;
+        @include lg {
+          display: block;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+          width: 35px;
+          height: 5px;
+          background-color: $white1;
+          margin: 6px 0;
+          transition: 0.4s;
+          border-radius: 2rem;
+        }
+
+        &.menu-active .bar1 {
+          -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+          transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        &.menu-active .bar2 {
+          opacity: 0;
+        }
+
+        &.menu-active .bar3 {
+          -webkit-transform: rotate(45deg) translate(-8px, -8px);
+          transform: rotate(45deg) translate(-8px, -8px);
+        }
+      }
+    }
+  }
+}
+
+.curve {
+  position: relative;
+  z-index: 1;
+}
+
+.popup-content {
+  @include flex-column;
+
+  a {
+    color: $green1;
+    font-weight: bold;
+    transition: 0.3s;
+
+    &:hover {
+      color: $orange1;
+    }
+  }
+
+  .signout-btn {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    padding: 0.5rem 2rem;
+  }
+}
+@import "assets/scss/common";
+
+.cart-drawer {
+  .cart-title {
+    @include flex-row(space-between);
+    border-bottom: 0.5rem solid $green1;
+    padding-bottom: 1.5rem;
+
+    h3 {
+      font-size: 2.5rem;
+      color: $green1;
+      font-weight: bold;
+    }
+
+    i {
+      font-size: 3rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: $green1;
+      transition: 0.3s;
+
+      &:hover {
+        color: $orange1;
+      }
+    }
+  }
+
+  .cart-list {
+    height: 66rem;
+    overflow-y: auto;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    li {
+      @include flex-row;
+      border-bottom: 5px solid $white5;
+      margin-top: 2rem;
+
+      & > div {
+        width: 50%;
+      }
+
+      .item-right {
+        padding-left: 2rem;
+
+        p {
+          color: $black2;
+          font-size: 1.6rem;
+
+          &.name {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .cart-total {
+    @include flex-row(space-between);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $green1;
+
+    & span:last-child {
+      font-size: 2.5rem;
+    }
+  }
+
+  .cart-btn {
+    padding: 3rem 0;
+    font-weight: bold;
+    color: $white1;
+  }
+}

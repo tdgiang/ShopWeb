@@ -1,0 +1,58 @@
+@import "assets/scss/common";
+
+.tiny-product {
+    @include flex-row(flex-start);
+    overflow: hidden;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    transition: 0.3s;
+    cursor: pointer;
+
+    @include md {
+        flex-direction: column;
+    }
+
+    &:hover {
+        .tiny-title {
+            color: $green1;
+        }
+    }
+
+    &__left {
+        img {
+            width: 12rem;
+            height: 12rem;
+        }
+    }
+
+    &__right {
+        padding: 1.5rem;
+
+        .tiny-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: $black2;
+            transition: 0.3s;
+        }
+
+        .stars-list {
+            margin: 1rem 0;
+
+            li i {
+                font-size: 1.6rem;
+            }
+        }
+
+        .tiny-price {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $black2;
+
+            & span:last-child {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}

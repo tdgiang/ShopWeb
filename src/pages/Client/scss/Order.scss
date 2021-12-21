@@ -1,0 +1,41 @@
+@import "assets/scss/common";
+
+.order {
+    @include absoluteCenter;
+    @include flex-row;
+    text-align: center;
+
+    &-success {
+        &__logo i {
+            font-size: 9rem;
+            color: $green1;
+        }
+
+        &__thanks {
+            margin-top: 3rem;
+
+            h3 {
+                font-size: 3rem;
+                font-weight: bold;
+                color: $black2;
+            }
+
+            p {
+                font-size: 1.6rem;
+                color: $black2;
+                margin-top: 3rem;
+                line-height: 1.3;
+            }
+        }
+
+        a {
+            display: inline-block;
+            font-size: 1.6rem;
+            margin-top: 3rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@import "assets/scss/common";
+
+.footer-container {
+  margin-top: 10rem;
+  background-color: $black1;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+
+    width: 100%;
+    height: 3rem;
+    top: 0;
+    background-position-y: bottom;
+
+    @include lg {
+      top: -1.5rem;
+    }
+  }
+
+  .footer {
+    &__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 2rem;
+
+      @include md {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-logo i {
+        color: $green1;
+      }
+
+      .intro-description {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: $white1;
+        margin-top: 1rem;
+      }
+
+      .social-network {
+        @include flex-row(flex-start);
+        margin-top: 1.5rem;
+        li {
+          i {
+            font-size: 2.5rem;
+            color: $green1;
+          }
+          & + li {
+            margin-left: 2rem;
+            i {
+            }
+          }
+        }
+      }
+
+      .footer-block {
+        .block-title {
+          display: block;
+          font-size: 1.8rem;
+          color: $green1;
+          font-weight: bold;
+          margin: 1rem 0;
+        }
+
+        .footer-list {
+          font-size: 1.2rem;
+          li {
+            & + li {
+              margin-top: 1rem;
+            }
+            a {
+              color: $white1;
+              padding: 0.5rem 0;
+
+              &:hover {
+                color: $green1;
+              }
+            }
+          }
+        }
+
+        .footer-info {
+          @include flex-column(flex-start, flex-start);
+          color: $white1;
+          font-size: 1.2rem;
+
+          p + p {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

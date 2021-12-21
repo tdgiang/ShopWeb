@@ -1,0 +1,26 @@
+@import "assets/scss/common";
+
+.admin-sidebar {
+    @include shadow2;
+    height: 100%;
+    padding: 2rem;
+
+    .sidebar-item {
+        margin-bottom: 1rem;
+
+        a {
+            color: $black2;
+            font-size: 1.6rem;
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1rem;
+            border-radius: 0.5rem;
+            transition: 0.3s;
+
+            &.active {
+                background-color: $green1;
+                color: $white1;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@import "assets/scss/common";
+
+.order-tracking {
+    margin-top: 7rem;
+
+    &__title {
+        font-size: 4rem;
+        font-weight: bold;
+        color: $black2;
+        margin-bottom: 5rem;
+        text-align: center;
+    }
+
+    &__content {
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+            color: $green1;
+        }
+
+        .ant-tabs-tab-btn {
+            color: $black2;
+            font-weight: 500;
+
+            &:hover {
+                color: $green1;
+            }
+        }
+
+        .ant-tabs-ink-bar {
+            background-color: $green1;
+        }
+
+        .ant-tabs-tab-btn:focus,
+        .ant-tabs-tab-remove:focus,
+        .ant-tabs-tab-btn:active,
+        .ant-tabs-tab-remove:active {
+            color: $green1;
+        }
+    }
+}

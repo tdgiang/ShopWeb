@@ -1,0 +1,36 @@
+@import "assets/scss/common";
+
+.users-table .ant-table-thead > tr > th {
+    background-color: $green1;
+    color: $white1;
+}
+
+.action-button {
+
+    i {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .up-role {
+        color: $green1;
+    }
+
+    .lock-user {
+        color: $orange1;
+        margin-left: 1rem;
+    }
+}
+
+.table-pagination {
+    @include flex-row;
+    margin-top: 3rem;
+}
+
+.user-section {
+    @include flex-column(center, stretch);
+
+    .users-table {
+        flex-grow: 1;
+    }
+}

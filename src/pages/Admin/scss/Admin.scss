@@ -1,0 +1,26 @@
+@import "assets/scss/common";
+
+.admin {
+    @include flex-column(flex-start, stretch);
+    height: 100vh;
+    color: $black2;
+
+    &-main {
+        @include flex-row(flex-start, stretch);
+        flex-grow: 1;
+        background-color: $white6;
+        min-height: 0;
+
+        &__left {
+            width: 25rem;
+            background-color: $white1;
+            flex-shrink: 0;
+        }
+
+        &__right {
+            padding: 2rem;
+            flex-grow: 1;
+            overflow: auto;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import "assets/scss/common";
+
+.quantity-input {
+    @include flex-row(flex-start);
+   
+
+    button {
+        font-size: 3rem;
+        width: 4rem;
+        height: 4rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    input {
+        align-self: stretch;
+        border: none;
+        outline: none;
+        text-align: center;
+        width: 5rem;
+        font-size: 2rem;
+        border: 1px solid #fefefe;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        &[type="number"] {
+            -moz-appearance: textfield; /* Firefox */
+        }
+    }
+}

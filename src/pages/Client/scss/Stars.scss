@@ -1,0 +1,13 @@
+@import "assets/scss/common";
+
+.stars-list {
+    @include flex-row(flex-start);
+
+    li {
+        margin-right: 0.5rem;
+        i {
+            color: $orange1;
+            font-size: 2rem;
+        }
+    }
+}
