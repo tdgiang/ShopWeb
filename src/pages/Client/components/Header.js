@@ -96,7 +96,6 @@ function Header() {
                 src="https://giavitaybac.com.vn/wp-content/uploads/2021/05/logo-fa-1.png"
               />
             </span>
-            <span style={{ fontSize: 34, marginLeft: 10 }}>Tây bắc</span>
           </Link>
         </h1>
         <div className="header__middle" ref={headerNav}>
